@@ -3,6 +3,7 @@ import supportedLanguages from "../constants/languages.js";
 
 export const reviewCode = async (req, res) => {
     try {
+        //  console.log(req.body);
         const { language, code } = req.body;
 
         if (!language || language.trim()==="") {

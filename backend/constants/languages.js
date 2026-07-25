@@ -1,12 +1,11 @@
 const supportedLanguages = [
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Java",
-    "C++",
-    "C#",
-    "Go",
-    "PHP"
+    "javascript",
+    "typescript",
+    "python",
+    "java",
+    "cpp",
+    "go",
+    "php"
 ];
 
 export default supportedLanguages;

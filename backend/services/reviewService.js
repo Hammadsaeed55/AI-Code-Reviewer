@@ -1,7 +1,7 @@
 import groq from "../config/groq.js";
 import reviewPrompt from "../prompts/reviewPrompt.js";
     
-export const reviewCodeService = async (code) => {
+export const reviewCodeService = async (language, code) => {
 
     const response = await groq.chat.completions.create({
         model: "llama-3.3-70b-versatile",
@@ -13,7 +13,7 @@ export const reviewCodeService = async (code) => {
             },
             {
                 role: "user",
-                content: reviewPrompt(code)
+                content: reviewPrompt(language, code)
             }    
         ],
     });
