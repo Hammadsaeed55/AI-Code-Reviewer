@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { History } from "lucide-react";
+
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
   return (
     <nav className="sticky top-0 z-10 flex items-center justify-between bg-white px-6 py-4 border-b shadow-sm">
       <div className="flex items-center gap-3">
@@ -15,6 +21,12 @@ const Navbar = () => {
           </p>
         </div>
       </div>
+
+     <button onClick={()=>{navigate("/history")}} className="flex items-center gap-2 border px-2 py-2 rounded-lg hover:bg-gray-200 font-medium transition">
+      <History size={18}/>
+      History
+     </button>
+
     </nav>
   );
 };
