@@ -5,6 +5,7 @@ import { useState } from "react";
 import api from "../services/api";
 import ReviewResult from "../components/ReviewResult";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 const Home = () => {
 
@@ -59,6 +60,17 @@ const Home = () => {
             setLoading(false)
         }
     }
+
+    useEffect(()=>{
+        const selectedReview = JSON.parse(localStorage.getItem("selectedReview"));
+        if(selectedReview){
+            setLanguage(selectedReview.language);
+            setCode(selectedReview.code);
+            setReview(selectedReview.review);
+
+            localStorage.removeItem("selectedReview");
+        }
+    },[]);
 
     return (
         <div className="min-h-screen bg-gray-200">
